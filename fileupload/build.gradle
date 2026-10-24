@@ -1,17 +1,13 @@
 description = 'NanoHttpd-apache file upload integration'
 
 dependencies {
-	compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.1'
+	implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.6.0'
 	
 	compileOnly project(':nanohttpd')
 	compileOnly group: 'javax.servlet', name: 'servlet-api', version: '2.5'
 	
-	testCompile project(':nanohttpd')
-	testCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
-	testCompile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
-	testCompile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.4.1'
-}
-
-task wrapper(type: Wrapper) {
-	gradleVersion = "4.4.1"
+	testImplementation project(':nanohttpd')
+	testImplementation group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
+	testImplementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.14'
 }

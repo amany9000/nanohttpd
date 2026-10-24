@@ -1,0 +1,770 @@
+{
+  "generated_at": "2026-10-24T07:57:03Z",
+  "modules": [
+    {
+      "name": "core",
+      "path": "core/src/main/java/org/nanohttpd/protocols/http",
+      "purpose": "Embedded HTTP server, request parsing, response serialization, connection and temporary-file strategies.",
+      "primary_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/IHTTPSession.java"
+      ],
+      "functions": [
+        {
+          "name": "start(int, boolean)",
+          "file": "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+          "params": [
+            "timeout: int",
+            "daemon: boolean"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "execute()",
+          "file": "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java",
+          "params": [],
+          "returns": "void (throws IOException)",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "parseBody(Map<String,String>)",
+          "file": "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java",
+          "params": [
+            "files: Map<String,String>"
+          ],
+          "returns": "void (throws IOException, ResponseException)",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "send(OutputStream)",
+          "file": "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+          "params": [
+            "outputStream: OutputStream"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "HTTPSession",
+          "fields": [
+            {
+              "name": "method",
+              "type": "Method",
+              "required": true
+            },
+            {
+              "name": "uri",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "headers",
+              "type": "Map<String,String>",
+              "required": true
+            },
+            {
+              "name": "parms",
+              "type": "Map<String,List<String>>",
+              "required": true
+            },
+            {
+              "name": "cookies",
+              "type": "CookieHandler",
+              "required": true
+            },
+            {
+              "name": "remoteIp",
+              "type": "String",
+              "required": false
+            }
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Response",
+          "fields": [
+            {
+              "name": "status",
+              "type": "IStatus",
+              "required": true
+            },
+            {
+              "name": "mimeType",
+              "type": "String",
+              "required": false
+            },
+            {
+              "name": "data",
+              "type": "InputStream",
+              "required": false
+            },
+            {
+              "name": "header",
+              "type": "Map<String,String>",
+              "required": true
+            },
+            {
+              "name": "cookieHeaders",
+              "type": "List<String>",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "HTTP/1.1 requests are kept alive unless the Connection header contains close.",
+          "location": "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java:404-405",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "Request bodies below 1,024 bytes are buffered in memory; larger bodies use temporary storage.",
+          "location": "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java:602-616",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "URL-encoded and multipart POST bodies are decoded; other nonempty POST bodies are exposed under postData, and PUT bodies under content.",
+          "location": "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java:643-669",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "websocket",
+        "webserver",
+        "nanolets",
+        "fileupload",
+        "markdown-plugin",
+        "samples"
+      ],
+      "algorithms": [
+        "HTTP header boundary detection and incremental request buffering",
+        "Query/form parameter decoding",
+        "Multipart form parsing and threshold-based temp-file body storage",
+        "Fixed-length/chunked response serialization with optional gzip"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name": "websocket",
+      "path": "websocket/src/main/java/org/nanohttpd/protocols/websockets",
+      "purpose": "Upgrade core HTTP requests to WebSocket connections and parse, dispatch, and serialize WebSocket frames.",
+      "primary_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/NanoWSD.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocket.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/CloseFrame.java"
+      ],
+      "functions": [
+        {
+          "name": "handleWebSocket(IHTTPSession)",
+          "file": "websocket/src/main/java/org/nanohttpd/protocols/websockets/NanoWSD.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "handleWebsocketFrame(WebSocketFrame)",
+          "file": "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocket.java",
+          "params": [
+            "frame: WebSocketFrame"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "read(InputStream)",
+          "file": "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java",
+          "params": [
+            "in: InputStream"
+          ],
+          "returns": "WebSocketFrame",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "WebSocketFrame",
+          "fields": [
+            {
+              "name": "opCode",
+              "type": "OpCode",
+              "required": true
+            },
+            {
+              "name": "fin",
+              "type": "boolean",
+              "required": true
+            },
+            {
+              "name": "maskingKey",
+              "type": "byte[]",
+              "required": false
+            },
+            {
+              "name": "payload",
+              "type": "byte[]",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "WebSocket",
+          "fields": [
+            {
+              "name": "state",
+              "type": "State",
+              "required": true
+            },
+            {
+              "name": "continuousOpCode",
+              "type": "OpCode",
+              "required": false
+            },
+            {
+              "name": "continuousFrames",
+              "type": "List<WebSocketFrame>",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "Upgrade requires Upgrade: websocket, Connection containing Upgrade, version 13, and a Sec-WebSocket-Key.",
+          "location": "websocket/src/main/java/org/nanohttpd/protocols/websockets/NanoWSD.java:142-190",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "Control frames cannot be fragmented and their payload cannot exceed 125 bytes.",
+          "location": "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java:238-275",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "Ping frames receive an automatic Pong with the same payload.",
+          "location": "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocket.java:203-223",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "core"
+      ],
+      "algorithms": [
+        "WebSocket accept-key SHA-1 and Base64 generation",
+        "Frame payload-length parsing and masking",
+        "Fragment aggregation and opcode dispatch",
+        "Close handshake state transition"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name": "webserver",
+      "path": "webserver/src/main/java/org/nanohttpd/webserver",
+      "purpose": "Serve local directories and files through HTTP, with directory indexes, range/conditional responses, CORS, and MIME plugins.",
+      "primary_files": [
+        "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/WebServerPlugin.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/WebServerPluginInfo.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/InternalRewrite.java"
+      ],
+      "functions": [
+        {
+          "name": "serve(IHTTPSession)",
+          "file": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "serveFile(String,Map,File,String)",
+          "file": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+          "params": [
+            "uri",
+            "headers",
+            "file",
+            "mime"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "listDirectory(String,File)",
+          "file": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+          "params": [
+            "uri",
+            "directory"
+          ],
+          "returns": "String HTML",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "WebServerPlugin",
+          "fields": [
+            {
+              "name": "canServeUri",
+              "type": "method",
+              "required": true
+            },
+            {
+              "name": "initialize",
+              "type": "method",
+              "required": true
+            },
+            {
+              "name": "serveFile",
+              "type": "method",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        },
+        {
+          "name": "InternalRewrite",
+          "fields": [
+            {
+              "name": "uri",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "headers",
+              "type": "Map<String,String>",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "Requests containing ../ in the normalized URI are forbidden.",
+          "location": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java:378-408",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "Directories redirect to a trailing-slash URI and then use an index file or a generated listing.",
+          "location": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java:409-438",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "Matching If-None-Match and range conditions can produce 304, 206, or 416 responses.",
+          "location": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java:473-572",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "core",
+        "markdown-plugin"
+      ],
+      "algorithms": [
+        "Root selection and path checks",
+        "Directory index lookup and listing",
+        "ETag generation and conditional/range response selection",
+        "MIME-based plugin dispatch and internal rewrites"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name": "nanolets",
+      "path": "nanolets/src/main/java/org/nanohttpd/router",
+      "purpose": "Route HTTP sessions by URI pattern to method-aware responder classes and provide stream, text, static-file, and fallback handlers.",
+      "primary_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java"
+      ],
+      "functions": [
+        {
+          "name": "serve(IHTTPSession)",
+          "file": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "UriRouter.process(IHTTPSession)",
+          "file": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "UriResource.match(String)",
+          "file": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+          "params": [
+            "url: String"
+          ],
+          "returns": "Map<String,String> or null",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "UriResource.process(Map,IHTTPSession)",
+          "file": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+          "params": [
+            "urlParams",
+            "session"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "UriResource",
+          "fields": [
+            {
+              "name": "uri",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "uriPattern",
+              "type": "Pattern",
+              "required": true
+            },
+            {
+              "name": "priority",
+              "type": "int",
+              "required": true
+            },
+            {
+              "name": "handler",
+              "type": "Class<?>",
+              "required": true
+            },
+            {
+              "name": "initParameter",
+              "type": "Object[]",
+              "required": false
+            },
+            {
+              "name": "uriParams",
+              "type": "List<String>",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "A URI route must fully match the normalized path; named colon segments are captured as route parameters.",
+          "location": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java:320-410",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "GET, POST, PUT, and DELETE invoke dedicated responder methods; other verbs use other().",
+          "location": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java:360-410",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "core"
+      ],
+      "algorithms": [
+        "Colon parameter segments compile to capture groups",
+        "Prioritizer orders route matching",
+        "Reflective handler construction and HTTP-method dispatch"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name": "fileupload",
+      "path": "fileupload/src/main/java/org/nanohttpd/fileupload",
+      "purpose": "Bridge NanoHTTPD request sessions to Apache Commons FileUpload for multipart forms and streaming uploads.",
+      "primary_files": [
+        "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java"
+      ],
+      "functions": [
+        {
+          "name": "isMultipartContent(IHTTPSession)",
+          "file": "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "boolean",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "parseRequest(IHTTPSession)",
+          "file": "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "List<FileItem>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "getItemIterator(IHTTPSession)",
+          "file": "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "FileItemIterator",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "NanoHttpdContext",
+          "fields": [
+            {
+              "name": "session",
+              "type": "IHTTPSession",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "Multipart detection applies only to POST sessions.",
+          "location": "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java:101-105",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "Unknown content length is represented as -1.",
+          "location": "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java:64-76",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "core",
+        "commons-fileupload 1.3.1"
+      ],
+      "algorithms": [
+        "Request header and input stream adaptation to UploadContext"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name": "markdown-plugin",
+      "path": "markdown-plugin/src/main/java/org/nanohttpd/markdown",
+      "purpose": "Render Markdown files as HTML through the webserver plugin contract.",
+      "primary_files": [
+        "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java",
+        "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPluginInfo.java"
+      ],
+      "functions": [
+        {
+          "name": "canServeUri(String,File)",
+          "file": "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java",
+          "params": [
+            "uri",
+            "rootDir"
+          ],
+          "returns": "boolean",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "serveFile(String,Map,IHTTPSession,File,String)",
+          "file": "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java",
+          "params": [
+            "uri",
+            "headers",
+            "session",
+            "file",
+            "mimeType"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "readSource(File)",
+          "file": "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java",
+          "params": [
+            "file"
+          ],
+          "returns": "String or null",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "MarkdownWebServerPluginInfo",
+          "fields": [
+            {
+              "name": "indexFiles",
+              "type": "String[]",
+              "required": true,
+              "default": [
+                "index.md"
+              ]
+            },
+            {
+              "name": "mimeTypes",
+              "type": "String[]",
+              "required": true,
+              "default": [
+                "text/markdown"
+              ]
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "Markdown files are handled as text/markdown and rendered with Pegdown to text/html.",
+          "location": "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java:112-EOF",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "webserver",
+        "core",
+        "pegdown 1.4.1"
+      ],
+      "algorithms": [
+        "Line-based source reading and Pegdown HTML conversion"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name": "samples",
+      "path": "samples/src/main/java/org/nanohttpd/samples",
+      "purpose": "Runnable demonstrations for custom HTTP responses, request inspection, and temp-file management.",
+      "primary_files": [
+        "samples/src/main/java/org/nanohttpd/samples/http/HelloServer.java",
+        "samples/src/main/java/org/nanohttpd/samples/http/DebugServer.java",
+        "samples/src/main/java/org/nanohttpd/samples/tempfiles/TempFilesServer.java"
+      ],
+      "functions": [
+        {
+          "name": "HelloServer.serve(IHTTPSession)",
+          "file": "samples/src/main/java/org/nanohttpd/samples/http/HelloServer.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "DebugServer.serve(IHTTPSession)",
+          "file": "samples/src/main/java/org/nanohttpd/samples/http/DebugServer.java",
+          "params": [
+            "session: IHTTPSession"
+          ],
+          "returns": "Response",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "ExampleManager.clear()",
+          "file": "samples/src/main/java/org/nanohttpd/samples/tempfiles/TempFilesServer.java",
+          "params": [],
+          "returns": "void",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "ExampleManager",
+          "fields": [
+            {
+              "name": "tmpdir",
+              "type": "File",
+              "required": true
+            },
+            {
+              "name": "tempFiles",
+              "type": "List<ITempFile>",
+              "required": true
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "Sample servers use port 8080 by default.",
+          "location": "samples/src/main/java/org/nanohttpd/samples/http/HelloServer.java:62-EOF",
+          "confidence": "confirmed"
+        },
+        {
+          "description": "The temp-file sample deletes all tracked temp files when clear() is called.",
+          "location": "samples/src/main/java/org/nanohttpd/samples/tempfiles/TempFilesServer.java:63-86",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [
+        "core"
+      ],
+      "algorithms": [
+        "Demonstration request-to-HTML response construction",
+        "Per-request temporary-file tracking and deletion"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name": "relocation",
+      "path": "relocation",
+      "purpose": "Publish Maven relocation metadata for legacy com.nanohttpd artifact coordinates to the org.nanohttpd group.",
+      "primary_files": [
+        "relocation/pom.xml",
+        "relocation/nanohttpd/pom.xml",
+        "relocation/nanohttpd-websocket/pom.xml",
+        "relocation/nanohttpd-webserver/pom.xml",
+        "relocation/nanohttpd-webserver-markdown-plugin/pom.xml",
+        "relocation/nanohttpd-samples/pom.xml"
+      ],
+      "functions": [],
+      "entities": [
+        {
+          "name": "Relocation POM",
+          "fields": [
+            {
+              "name": "old_groupId",
+              "type": "Maven coordinate",
+              "required": true,
+              "default": "com.nanohttpd"
+            },
+            {
+              "name": "artifactId",
+              "type": "Maven coordinate",
+              "required": true
+            },
+            {
+              "name": "version",
+              "type": "Maven coordinate",
+              "required": true,
+              "default": "2.2.0"
+            },
+            {
+              "name": "target_groupId",
+              "type": "Maven coordinate",
+              "required": true,
+              "default": "org.nanohttpd"
+            }
+          ],
+          "confidence": "confirmed"
+        }
+      ],
+      "business_rules": [
+        {
+          "description": "The five legacy artifact POMs declare relocation to groupId org.nanohttpd.",
+          "location": "relocation/*/pom.xml",
+          "confidence": "confirmed"
+        }
+      ],
+      "dependencies": [],
+      "algorithms": [],
+      "complexity": "low"
+    }
+  ]
+}

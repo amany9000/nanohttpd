@@ -48,7 +48,9 @@ import org.nanohttpd.protocols.http.NanoHTTPD;
 import org.nanohttpd.protocols.http.response.Response;
 import org.nanohttpd.protocols.http.response.Status;
 import org.nanohttpd.webserver.WebServerPlugin;
-import org.pegdown.PegDownProcessor;
+import com.vladsch.flexmark.html.HtmlRenderer;
+import com.vladsch.flexmark.parser.Parser;
+import com.vladsch.flexmark.util.ast.Node;
 
 /**
  * @author Paul S. Hawke (paul.hawke@gmail.com) On: 9/13/13 at 4:03 AM
@@ -60,10 +62,13 @@ public class MarkdownWebServerPlugin implements WebServerPlugin {
      */
     private static final Logger LOG = Logger.getLogger(MarkdownWebServerPlugin.class.getName());
 
-    private final PegDownProcessor processor;
+    private final Parser parser;
+
+    private final HtmlRenderer renderer;
 
     public MarkdownWebServerPlugin() {
-        this.processor = new PegDownProcessor();
+        this.parser = Parser.builder().build();
+        this.renderer = HtmlRenderer.builder().build();
     }
 
     @Override
@@ -114,7 +119,8 @@ public class MarkdownWebServerPlugin implements WebServerPlugin {
         String markdownSource = readSource(file);
         byte[] bytes;
         try {
-            bytes = this.processor.markdownToHtml(markdownSource).getBytes("UTF-8");
+            Node document = this.parser.parse(markdownSource);
+            bytes = this.renderer.render(document).getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
             MarkdownWebServerPlugin.LOG.log(Level.SEVERE, "encoding problem, responding nothing", e);
             bytes = new byte[0];

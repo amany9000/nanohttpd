@@ -22,3 +22,8 @@ gradlew.bat
 
 /.settings/
 /LICENSE.txt
+
+myHellopApp
+.reversa/config.user.toml
+.reversa/graphify-out/
+.reversa/context/graph-usage.jsonl

@@ -199,6 +199,8 @@ public class SimpleWebServer extends NanoHTTPD {
 
     private final String cors;
 
+    private boolean directoryListingEnabled = true;
+
     protected List<File> rootDirs;
 
     public SimpleWebServer(String host, int port, File wwwroot, boolean quiet, String cors) {
@@ -286,11 +288,24 @@ public class SimpleWebServer extends NanoHTTPD {
     public void init() {
     }
 
+    /**
+     * Enables or disables automatic directory listings. Enabled by default for
+     * compatibility.
+     */
+    public void setDirectoryListingEnabled(boolean enabled) {
+        this.directoryListingEnabled = enabled;
+    }
+
+    private static String escapeHtml(String value) {
+        return value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+    }
+
     protected String listDirectory(String uri, File f) {
         String heading = "Directory " + uri;
+        String escapedHeading = escapeHtml(heading);
         StringBuilder msg =
-                new StringBuilder("<html><head><title>" + heading + "</title><style><!--\n" + "span.dirname { font-weight: bold; }\n" + "span.filesize { font-size: 75%; }\n"
-                        + "// -->\n" + "</style>" + "</head><body><h1>" + heading + "</h1>");
+                new StringBuilder("<html><head><title>" + escapedHeading + "</title><style><!--\n" + "span.dirname { font-weight: bold; }\n"
+                        + "span.filesize { font-size: 75%; }\n" + "// -->\n" + "</style>" + "</head><body><h1>" + escapedHeading + "</h1>");
 
         String up = null;
         if (uri.length() > 1) {
@@ -322,18 +337,20 @@ public class SimpleWebServer extends NanoHTTPD {
             if (up != null || directories.size() > 0) {
                 msg.append("<section class=\"directories\">");
                 if (up != null) {
-                    msg.append("<li><a rel=\"directory\" href=\"").append(up).append("\"><span class=\"dirname\">..</span></a></li>");
+                    msg.append("<li><a rel=\"directory\" href=\"").append(escapeHtml(encodeUri(up))).append("\"><span class=\"dirname\">..</span></a></li>");
                 }
                 for (String directory : directories) {
                     String dir = directory + "/";
-                    msg.append("<li><a rel=\"directory\" href=\"").append(encodeUri(uri + dir)).append("\"><span class=\"dirname\">").append(dir).append("</span></a></li>");
+                    msg.append("<li><a rel=\"directory\" href=\"").append(escapeHtml(encodeUri(uri + dir))).append("\"><span class=\"dirname\">").append(escapeHtml(dir))
+                            .append("</span></a></li>");
                 }
                 msg.append("</section>");
             }
             if (files.size() > 0) {
                 msg.append("<section class=\"files\">");
                 for (String file : files) {
-                    msg.append("<li><a href=\"").append(encodeUri(uri + file)).append("\"><span class=\"filename\">").append(file).append("</span></a>");
+                    msg.append("<li><a href=\"").append(escapeHtml(encodeUri(uri + file))).append("\"><span class=\"filename\">").append(escapeHtml(file))
+                            .append("</span></a>");
                     File curFile = new File(f, file);
                     long len = curFile.length();
                     msg.append("&nbsp;<span class=\"filesize\">(");
@@ -400,10 +417,22 @@ public class SimpleWebServer extends NanoHTTPD {
         // Browsers get confused without '/' after the directory, send a
         // redirect.
         File f = new File(homeDir, uri);
+        try {
+            java.nio.file.Path canonicalRoot = homeDir.getCanonicalFile().toPath();
+            java.nio.file.Path canonicalTarget = f.getCanonicalFile().toPath();
+            if (!canonicalTarget.startsWith(canonicalRoot)) {
+                return getForbiddenResponse("Path escapes the configured root.");
+            }
+        } catch (IOException e) {
+            return getNotFoundResponse();
+        }
         if (f.isDirectory() && !uri.endsWith("/")) {
             uri += "/";
-            Response res = newFixedLengthResponse(Status.REDIRECT, NanoHTTPD.MIME_HTML, "<html><body>Redirected: <a href=\"" + uri + "\">" + uri + "</a></body></html>");
-            res.addHeader("Location", uri);
+            String redirectUri = encodeUri(uri);
+            Response res =
+                    newFixedLengthResponse(Status.REDIRECT, NanoHTTPD.MIME_HTML, "<html><body>Redirected: <a href=\"" + escapeHtml(redirectUri) + "\">" + escapeHtml(uri)
+                            + "</a></body></html>");
+            res.addHeader("Location", redirectUri);
             return res;
         }
 
@@ -412,11 +441,11 @@ public class SimpleWebServer extends NanoHTTPD {
             // none found, list the directory if readable.
             String indexFile = findIndexFileInDirectory(f);
             if (indexFile == null) {
-                if (f.canRead()) {
+                if (this.directoryListingEnabled && f.canRead()) {
                     // No index file, list the directory if it is readable
                     return newFixedLengthResponse(Status.OK, NanoHTTPD.MIME_HTML, listDirectory(uri, f));
                 } else {
-                    return getForbiddenResponse("No directory listing.");
+                    return getForbiddenResponse("Directory listing is disabled or the directory is unreadable.");
                 }
             } else {
                 return respond(headers, session, uri + indexFile);

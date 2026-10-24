@@ -231,7 +231,11 @@ public abstract class WebSocket {
     private void readWebsocket() {
         try {
             while (this.state == State.OPEN) {
-                handleWebsocketFrame(WebSocketFrame.read(this.in));
+                WebSocketFrame frame = WebSocketFrame.read(this.in);
+                if (!frame.isMasked()) {
+                    throw new WebSocketException(CloseCode.ProtocolError, "Client frames must be masked.");
+                }
+                handleWebsocketFrame(frame);
             }
         } catch (CharacterCodingException e) {
             onException(e);
@@ -241,6 +245,10 @@ public abstract class WebSocket {
             if (e instanceof WebSocketException) {
                 doClose(((WebSocketException) e).getCode(), ((WebSocketException) e).getReason(), false);
             }
+        } catch (RuntimeException e) {
+            IOException handlerFailure = new IOException("WebSocket handler failed.", e);
+            onException(handlerFailure);
+            doClose(CloseCode.InternalServerError, "WebSocket handler failed.", false);
         } finally {
             doClose(CloseCode.InternalServerError, "Handler terminated without closing the connection.", false);
         }

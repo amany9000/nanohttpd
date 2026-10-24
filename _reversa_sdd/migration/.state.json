@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "startedAt": "2026-10-24T08:19:39Z",
+  "lastCheckpoint": "2026-10-24T08:34:12Z",
+  "completedAgents": [
+    "paradigm_advisor",
+    "curator",
+    "strategist",
+    "designer",
+    "screen_translator",
+    "inspector"
+  ],
+  "pendingAgents": [],
+  "currentAgent": {
+    "agent": null,
+    "phase": null,
+    "status": "complete",
+    "topologyApproved": true,
+    "screenModeApproved": false
+  },
+  "pendingDecisions": [],
+  "artifacts": {
+    "paradigm_decision.md": {
+      "sha256": "0c8dda50c43579a41cfc72ba2075e800082ba9e84afb0f87311ccf5e20f1f9d6",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "target_business_rules.md": {
+      "sha256": "ab7dd75dce8f54196c1cbf1c679072ea835e8e1895d3f436af3f276e5ae2f613",
+      "generatedAt": "2026-10-24T08:34:12Z"
+    },
+    "discard_log.md": {
+      "sha256": "54928e1c4923b5039f0b48cf1d2966055926d2fbf09db7c03aea83b48cdda904",
+      "generatedAt": "2026-10-24T08:22:46Z"
+    },
+    "ambiguity_log.md": {
+      "sha256": "893ea5f3c3d879aca2c27ed492ca01f70fc2fbe1f8f237f14816bac2e14dca00",
+      "generatedAt": "2026-10-24T08:33:48Z"
+    },
+    "migration_strategy.md": {
+      "sha256": "af29e65b1de416abee83307a91df093f88c1f2d5a9b09bf53af7a5b6f5a295e5",
+      "generatedAt": "2026-10-24T08:33:48Z"
+    },
+    "risk_register.md": {
+      "sha256": "9b0b5f9ffecd575da14b8f89b63ab5bec3ddf41a4207de93f1ad29c263b3f91d",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "cutover_plan.md": {
+      "sha256": "954543ca14fe384394731284d037d159610ec9cfbdb2383ba3c35b9f7036bd64",
+      "generatedAt": "2026-10-24T08:33:48Z"
+    },
+    "topology_decision.md": {
+      "sha256": "13c29b513d6f8feae5a4a4bcec6d2c91b11bbb80377207bceafe19d274551a94",
+      "generatedAt": "2026-10-24T08:28:08Z"
+    },
+    "target_architecture.md": {
+      "sha256": "312765ac8dfba17b24974c317e4e3be032deca47846493892298fdf5eece4859",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "target_domain_model.md": {
+      "sha256": "817caa732bc74a0019b88988cfb8da9af70ae1ab5111d5c3dd95beca7956f1b8",
+      "generatedAt": "2026-10-24T08:28:08Z"
+    },
+    "target_data_model.md": {
+      "sha256": "0590afa3d54c27f97290b1e22f4d6d452ef77ee262d1276983c5d97922d5aed5",
+      "generatedAt": "2026-10-24T08:28:08Z"
+    },
+    "data_migration_plan.md": {
+      "sha256": "15f1f5c5a9d2caf92e1c68aefd3bb23dd19396c375056596a593a211ccf86683",
+      "generatedAt": "2026-10-24T08:28:08Z"
+    },
+    "migration_brief.md": {
+      "sha256": "b3eb87488ea8176bd1d0a06c13303b8e760ceaf119616b36c698c4c55eb14201",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "screen_modernization_decision.md": {
+      "sha256": "a3bdfdcbc82f3cea2d9f45a91aab442d7237aacfca32563338d1f21c4095e2f5",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "target_screens.md": {
+      "sha256": "351f5ff1cd82d7d9242257aa53579a1a150c45568cf5c391801192afe1bb6200",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "screen_deviation_log.md": {
+      "sha256": "0ccf4eb0e964d7c5c0c64cae5b1b2d61177d946f226e7e695c489234e242bdfb",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "../screens/inventory.json": {
+      "sha256": "e5b3660871d650b323ba709e50c646690d326ff6dbb18bc099413518b8155af5",
+      "generatedAt": "2026-10-24T08:32:06Z"
+    },
+    "parity_specs.md": {
+      "sha256": "23fcfa3197df96dc3a9255419f59d3adb56ddfdf3b1254c261db7526123d6139",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/01-http-core.feature": {
+      "sha256": "ee7206c8e6e6b495c3d84b6a8aed9d9dbad9b8edd555b5c4cd8160782c479225",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/02-request-body-storage.feature": {
+      "sha256": "64cacbd275a90d4ea04642d29c6b44aece4bafab5a3a100f015366555fe023e4",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/03-websocket.feature": {
+      "sha256": "74312535efec7c680bc4991ee1430d6ed7a03ac187b7b81dafde08ea2be74b5e",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/04-static-serving.feature": {
+      "sha256": "63279838f788b316d66e821e200207eccd85bc2cd373e6e5f921d72427a7038e",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/05-nanolets-routing.feature": {
+      "sha256": "a190d396480d328fac589ba5aa9cbcb2e77061300b9887fb467d01205a2e2858",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/06-fileupload.feature": {
+      "sha256": "1423b794518764f721118adbd80dc2c9db3b11625e136f5f7b590ac0bc2b0699",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/07-markdown-plugin.feature": {
+      "sha256": "4c0c9d05dca87d1c7c80da4ce0a362d2cfb931d36f7353c3599950b3c00c298e",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "parity_tests/08-packaging-and-samples.feature": {
+      "sha256": "80908224a332ce4b2ae8c586a89b8b4a29cb17104efd20c9d3b0d32c1ee12bb6",
+      "generatedAt": "2026-10-24T08:32:59Z"
+    },
+    "handoff.md": {
+      "sha256": "f2018433c5e0a889019a8a81fa26594ce422c1d3ef667f361b931c433d69cd5f",
+      "generatedAt": "2026-10-24T08:34:12Z"
+    },
+    ".logs/20261024T083348Z-migrate.log": {
+      "sha256": "b8b70662c982155fcafd75babb8049ff534ed2173d431dc01b079fd5ec6c1cac",
+      "generatedAt": "2026-10-24T08:33:48Z"
+    }
+  },
+  "auto": false,
+  "engine": "codex",
+  "reversaVersion": "1.3.6",
+  "briefPath": "_reversa_sdd/migration/migration_brief.md",
+  "expectedLegacyArtifacts": "references/expected_legacy_artifacts.yaml"
+}

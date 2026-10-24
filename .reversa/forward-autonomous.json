@@ -1,0 +1,23 @@
+{
+  "schema-version": 1,
+  "started-at": "2026-10-24T08:40:23Z",
+  "status": "done",
+  "answers": {
+    "target": "to-do",
+    "doubts": "file",
+    "optional-stages": false,
+    "on-failure": "skip"
+  },
+  "queue": [
+    {
+      "item": "001-modernize-dependencies-java17",
+      "feature-dir": "_reversa_forward/001-modernize-dependencies-java17",
+      "status": "done",
+      "last-stage": "to-do",
+      "note": "Requirements, plan, and to-do completed; coding was outside the selected target and remains gated by allowLegacyEdits=false."
+    }
+  ],
+  "warnings": [
+    "Coding remains blocked by .reversa/reversa-config.json (allowLegacyEdits=false); user selected to stop at to-do."
+  ]
+}

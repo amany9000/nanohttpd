@@ -1,0 +1,222 @@
+{
+  "generated_by": "reversa-scout (graph lens)",
+  "generated_at": "2026-10-24T07:57:03Z",
+  "graph_path": ".reversa/graphify-out/graph.json",
+  "modules": [
+    {
+      "name": "core",
+      "community_ids": [
+        10,
+        9,
+        7,
+        17,
+        12,
+        13,
+        35,
+        40
+      ],
+      "folders": [
+        "core"
+      ],
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Status.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpGetRequestTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java"
+      ],
+      "god_nodes": [
+        ".serve()",
+        ".create()",
+        "TestServer"
+      ],
+      "node_count": 496,
+      "confidence": "🟡"
+    },
+    {
+      "name": "websocket",
+      "community_ids": [
+        22,
+        30,
+        28,
+        56,
+        47,
+        63,
+        43,
+        70
+      ],
+      "folders": [
+        "websocket"
+      ],
+      "top_files": [
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/WebSocketResponseHandlerTest.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocket.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/CloseCode.java",
+        "websocket/src/main/java/org/nanohttpd/samples/websockets/DebugWebSocketServer.java"
+      ],
+      "god_nodes": [
+        ".onClose()",
+        ".onMessage()",
+        ".openWebSocket()"
+      ],
+      "node_count": 169,
+      "confidence": "🟡"
+    },
+    {
+      "name": "webserver",
+      "community_ids": [
+        20,
+        24,
+        52,
+        73,
+        77,
+        78,
+        13,
+        54
+      ],
+      "folders": [
+        "webserver"
+      ],
+      "top_files": [
+        "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestHttpServer.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServer.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServerWithSingleOrigin.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/InternalRewrite.java"
+      ],
+      "god_nodes": [
+        "Runnable",
+        ".run()",
+        ".serveFile()"
+      ],
+      "node_count": 93,
+      "confidence": "🟡"
+    },
+    {
+      "name": "nanolets",
+      "community_ids": [
+        18,
+        21,
+        26,
+        34,
+        36,
+        51,
+        153,
+        69
+      ],
+      "folders": [
+        "nanolets"
+      ],
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/AppNanolets.java",
+        "nanolets/build.gradle",
+        "nanolets/pom.xml"
+      ],
+      "god_nodes": [
+        ".getStatus()",
+        ".getMimeType()",
+        ".getText()"
+      ],
+      "node_count": 161,
+      "confidence": "🟡"
+    },
+    {
+      "name": "fileupload",
+      "community_ids": [
+        5,
+        72,
+        25,
+        188,
+        8,
+        82
+      ],
+      "folders": [
+        "fileupload"
+      ],
+      "top_files": [
+        "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java",
+        "fileupload/src/test/java/org/nanohttpd/junit/fileupload/TestNanoFileUpLoad.java",
+        "fileupload/build.gradle",
+        "fileupload/pom.xml"
+      ],
+      "god_nodes": [
+        "NanoFileUpload",
+        "NanoHttpdContext",
+        "TestServer"
+      ],
+      "node_count": 29,
+      "confidence": "🟡"
+    },
+    {
+      "name": "markdown-plugin",
+      "community_ids": [
+        24,
+        13,
+        189,
+        19,
+        82
+      ],
+      "folders": [
+        "markdown-plugin"
+      ],
+      "top_files": [
+        "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java",
+        "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPluginInfo.java",
+        "markdown-plugin/build.gradle",
+        "markdown-plugin/pom.xml"
+      ],
+      "god_nodes": [
+        "MarkdownWebServerPlugin",
+        "MarkdownWebServerPluginInfo",
+        ".serveFile()"
+      ],
+      "node_count": 14,
+      "confidence": "🟡"
+    },
+    {
+      "name": "samples",
+      "community_ids": [
+        16,
+        50,
+        5,
+        200,
+        82
+      ],
+      "folders": [
+        "samples"
+      ],
+      "top_files": [
+        "samples/src/main/java/org/nanohttpd/samples/tempfiles/TempFilesServer.java",
+        "samples/src/main/java/org/nanohttpd/samples/http/DebugServer.java",
+        "samples/src/main/java/org/nanohttpd/samples/http/HelloServer.java",
+        "samples/build.gradle",
+        "samples/pom.xml"
+      ],
+      "god_nodes": [
+        ".main()",
+        ".serve()",
+        "DebugServer"
+      ],
+      "node_count": 24,
+      "confidence": "🟡"
+    },
+    {
+      "name": "relocation",
+      "community_ids": [],
+      "folders": [
+        "relocation"
+      ],
+      "top_files": [
+        "relocation/pom.xml",
+        "relocation/nanohttpd/",
+        "relocation/nanohttpd-websocket/"
+      ],
+      "god_nodes": [],
+      "node_count": 0,
+      "confidence": "🟡"
+    }
+  ]
+}

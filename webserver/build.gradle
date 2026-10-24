@@ -1,11 +1,7 @@
 description = 'NanoHttpd-Webserver'
 
 dependencies {
-	compile project(':nanohttpd')
+	implementation project(':nanohttpd')
 	
-	testCompile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
-}
-
-task wrapper(type: Wrapper) {
-	gradleVersion = "4.4.1"
+	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
 }

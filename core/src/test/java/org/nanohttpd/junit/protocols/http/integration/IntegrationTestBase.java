@@ -35,6 +35,8 @@ package org.nanohttpd.junit.protocols.http.integration;
 
 import java.io.IOException;
 
+import org.apache.http.client.params.ClientPNames;
+import org.apache.http.client.params.CookiePolicy;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.junit.After;
 import org.junit.Before;
@@ -55,6 +57,7 @@ public abstract class IntegrationTestBase<T extends NanoHTTPD> {
     public void setUp() {
         this.testServer = createTestServer();
         this.httpclient = new DefaultHttpClient();
+        this.httpclient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.BROWSER_COMPATIBILITY);
         try {
             this.testServer.start();
         } catch (IOException e) {

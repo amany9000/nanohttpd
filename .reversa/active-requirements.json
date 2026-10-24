@@ -1,0 +1,14 @@
+{
+  "schema-version": 1,
+  "feature-dir": "_reversa_forward/001-modernize-dependencies-java17",
+  "feature-id": "001",
+  "short-name": "modernize-dependencies-java17",
+  "started-at": "2026-10-24T08:40:23Z",
+  "current-stage": "coding",
+  "stages-completed": [
+    "requirements",
+    "plan",
+    "to-do"
+  ],
+  "paused-features": []
+}

@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-10-24T07:56:25Z",
+  "project_root": "/Users/amanyadav/reaper/ai/lib/nanohttpd",
+  "languages": [
+    {
+      "name": "Java",
+      "extensions": [
+        ".java"
+      ],
+      "file_count": 87
+    },
+    {
+      "name": "Gradle Groovy DSL",
+      "extensions": [
+        ".gradle"
+      ],
+      "file_count": 9
+    }
+  ],
+  "primary_language": "Java",
+  "frameworks": [
+    {
+      "name": "NanoHTTPD",
+      "version": "2.3.2-SNAPSHOT",
+      "source": "pom.xml"
+    },
+    {
+      "name": "JUnit",
+      "version": "4.12",
+      "source": "pom.xml"
+    }
+  ],
+  "package_manager": "Maven and Gradle",
+  "entry_points": [
+    {
+      "path": "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+      "type": "embedded_http_server"
+    },
+    {
+      "path": "core/src/main/java/org/nanohttpd/util/ServerRunner.java",
+      "type": "server_launcher_helper"
+    },
+    {
+      "path": "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+      "type": "static_web_server"
+    },
+    {
+      "path": "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+      "type": "uri_router"
+    }
+  ],
+  "config_files": [
+    "pom.xml",
+    "build.gradle",
+    "settings.gradle",
+    ".travis.yml"
+  ],
+  "ci_cd": [
+    ".travis.yml"
+  ],
+  "database_hints": [],
+  "test_framework": "JUnit 4.12",
+  "test_file_count": 36,
+  "modules": [
+    "core",
+    "websocket",
+    "webserver",
+    "nanolets",
+    "fileupload",
+    "markdown-plugin",
+    "samples",
+    "relocation"
+  ],
+  "organization_suggestion": {
+    "granularity": "module",
+    "rationale": "The root build defines distinct product modules, while routing is localized to nanolets rather than centralized across the project.",
+    "signals": [
+      {
+        "type": "top_level_build_modules",
+        "evidence": [
+          "pom.xml",
+          "core/",
+          "websocket/",
+          "webserver/",
+          "nanolets/",
+          "fileupload/",
+          "markdown-plugin/",
+          "samples/"
+        ]
+      }
+    ],
+    "features": []
+  }
+}

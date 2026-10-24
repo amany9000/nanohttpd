@@ -8,6 +8,23 @@ It is being developed at Github and uses Apache Maven for builds & unit testing:
  * Coverage Status: [![Coverage Status](https://coveralls.io/repos/NanoHttpd/nanohttpd/badge.svg)](https://coveralls.io/r/NanoHttpd/nanohttpd)
  * Current central released version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.nanohttpd/nanohttpd/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.nanohttpd/nanohttpd)
 
+## Java 17 / 3.0 migration
+
+The 3.0 line requires Java 17 or newer. Consumers that must stay on older Java runtimes should remain on the latest compatible 2.x release; 2.x is the Java 7 compatible line in this repository snapshot. The 3.0 artifacts retain the `org.nanohttpd` group and existing module names. The `com.nanohttpd` relocation artifacts are being carried through the announced major-release transition; the final sunset date still needs to be published.
+
+For this migration, the repository uses `3.0.0-SNAPSHOT` while work is in progress. It modernizes the Maven compiler/test/coverage plugins and Gradle to 9.8.2, with a committed Gradle Wrapper. Runtime integrations update Commons FileUpload to 1.6.0 and replace Pegdown with Flexmark 0.64.8. WebSocket test dependencies move to Jetty 12.1.14 and Mockito 5.24.0. HTTP client libraries remain test-only and use the compatible 4.5.14 line.
+
+Build and test both supported build systems with JDK 17:
+
+```sh
+mvn test
+./gradlew test
+```
+
+Behavioral changes in this migration include canonical path containment beneath configured web roots, escaped directory-listing output, an option to disable directory listings, and rejection of unmasked client WebSocket frames. Directory listings remain enabled by default for compatibility. Markdown rendering now uses Flexmark, so generated HTML may differ from Pegdown output. Review pages that depend on exact rendered markup before upgrading.
+
+This migration is still in progress. Request/upload/frame size limits and the secure temporary-storage policy have not yet been implemented, and the final relocation sunset date remains to be announced. Maven tests/package and Gradle tests/artifact assembly passed on JDK 27; the builds target Java 17, but runtime validation on JDK 17 remains outstanding. Maven Javadoc generation also reports errors for legacy self-closing `<p/>` tags. Treat the snapshot as a migration candidate, not a completed stable release.
+
 ## Quickstart
 
 We'll create a custom HTTP server project using Maven for build/dep system. This tutorial assumes you are using a Unix variant and a shell. First, install Maven and Java SDK if not already installed. Then run:

@@ -1,0 +1,1822 @@
+{
+  "schema_version": 1,
+  "enabled": true,
+  "graph_path": ".reversa/graphify-out/graph.json",
+  "source": "reversa",
+  "mode": "ast",
+  "graphify_version": "0.9.95",
+  "built_at": "2026-10-24T07:55:56Z",
+  "git_head": "efb2ebf85a2b06f7c508aba9eaad5377e3a01e81",
+  "node_count": 2744,
+  "edge_count": 6292,
+  "file_count": 216,
+  "god_nodes": [
+    {
+      "id": "core_src_main_java_org_nanohttpd_protocols_http_response_response_response",
+      "label": "Response",
+      "degree": 117
+    },
+    {
+      "id": "core_src_main_java_org_nanohttpd_protocols_http_ihttpsession_ihttpsession",
+      "label": "IHTTPSession",
+      "degree": 93
+    },
+    {
+      "id": "core_src_main_java_org_nanohttpd_protocols_http_nanohttpd_nanohttpd",
+      "label": "NanoHTTPD",
+      "degree": 85
+    },
+    {
+      "id": "core_src_main_java_org_nanohttpd_protocols_http_response_status_status",
+      "label": "Status",
+      "degree": 61
+    },
+    {
+      "id": "websocket_src_main_java_org_nanohttpd_protocols_websockets_websocketframe_websocketframe",
+      "label": "WebSocketFrame",
+      "degree": 51
+    },
+    {
+      "id": "nanolets_src_test_java_org_nanohttpd_junit_router_testnanolets_testnanolets",
+      "label": "TestNanolets",
+      "degree": 44
+    },
+    {
+      "id": "core_src_main_java_org_nanohttpd_protocols_http_request_method_method",
+      "label": "Method",
+      "degree": 40
+    },
+    {
+      "id": "nanolets_src_main_java_org_nanohttpd_router_routernanohttpd_uriresource",
+      "label": "UriResource",
+      "degree": 36
+    },
+    {
+      "id": "core_src_main_java_org_nanohttpd_protocols_http_httpsession_httpsession",
+      "label": "HTTPSession",
+      "degree": 36
+    },
+    {
+      "id": "agents_skills_impeccable_scripts_live_browser_connectsse",
+      "label": "connectSSE()",
+      "degree": 34
+    }
+  ],
+  "communities": [
+    {
+      "id": 0,
+      "label": "Community 0",
+      "size": 138,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 1,
+      "label": "Community 1",
+      "size": 88,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Community 2",
+      "size": 88,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js",
+        ".agents/skills/impeccable/scripts/live-browser-dom.js"
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Community 3",
+      "size": 82,
+      "top_files": [
+        ".agents/skills/reversa-spec-sdd/scripts/spec_scorer.py",
+        ".agents/skills/reversa-highcharts-visualizer/scripts/sample_data.py",
+        ".agents/skills/reversa-highcharts-visualizer/scripts/parse_data.py",
+        ".agents/skills/reversa-highcharts-visualizer/scripts/analyze_data.py"
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Community 5",
+      "size": 57,
+      "top_files": [
+        "fileupload/src/main/java/org/nanohttpd/fileupload/NanoFileUpload.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/IHTTPSession.java",
+        "fileupload/src/test/java/org/nanohttpd/junit/fileupload/TestNanoFileUpLoad.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/NanoWSD.java"
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Community 4",
+      "size": 57,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/modern-screenshot.umd.js"
+      ]
+    },
+    {
+      "id": 6,
+      "label": "Community 6",
+      "size": 53,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 7,
+      "label": "Community 7",
+      "size": 51,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/threading/DefaultAsyncRunner.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/ServerRunnable.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/threading/IAsyncRunner.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/ClientHandler.java"
+      ]
+    },
+    {
+      "id": 8,
+      "label": "Community 8",
+      "size": 49,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/IntegrationTestBase.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/SSLServerSocketFactoryTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/DefaultTempFile.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpSSLServerTest.java"
+      ]
+    },
+    {
+      "id": 10,
+      "label": "Community 10",
+      "size": 47,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpGetRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpHeadRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/InvalidRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java"
+      ]
+    },
+    {
+      "id": 9,
+      "label": "Community 9",
+      "size": 47,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Status.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/StatusTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java"
+      ]
+    },
+    {
+      "id": 12,
+      "label": "Community 12",
+      "size": 45,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/ServerSocketFactoryTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/sockets/SecureServerSocketFactory.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/sockets/DefaultServerSocketFactory.java",
+        "core/src/main/java/org/nanohttpd/util/IFactory.java"
+      ]
+    },
+    {
+      "id": 11,
+      "label": "Community 11",
+      "size": 45,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 13,
+      "label": "Community 13",
+      "size": 43,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/IStatus.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/NanoWSD.java",
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/WebSocketResponseHandlerTest.java"
+      ]
+    },
+    {
+      "id": 14,
+      "label": "Community 14",
+      "size": 42,
+      "top_files": [
+        ".agents/skills/reversa-screen-translator/references/templates/golden_manifest.yaml"
+      ]
+    },
+    {
+      "id": 15,
+      "label": "Community 15",
+      "size": 40,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 16,
+      "label": "Community 16",
+      "size": 39,
+      "top_files": [
+        "samples/src/main/java/org/nanohttpd/samples/http/DebugServer.java",
+        "core/src/main/java/org/nanohttpd/util/ServerRunner.java",
+        "samples/src/main/java/org/nanohttpd/samples/http/HelloServer.java",
+        "samples/src/main/java/org/nanohttpd/samples/tempfiles/TempFilesServer.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/DefaultTempFileManager.java"
+      ]
+    },
+    {
+      "id": 17,
+      "label": "Community 17",
+      "size": 35,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpPostRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpSSLServerTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpPutRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpSessionHeadersTest.java"
+      ]
+    },
+    {
+      "id": 18,
+      "label": "Community 18",
+      "size": 35,
+      "top_files": [
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java",
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/AppNanolets.java"
+      ]
+    },
+    {
+      "id": 20,
+      "label": "Community 20",
+      "size": 34,
+      "top_files": [
+        "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/InternalRewrite.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/ShutdownTest.java"
+      ]
+    },
+    {
+      "id": 21,
+      "label": "Community 21",
+      "size": 34,
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java"
+      ]
+    },
+    {
+      "id": 19,
+      "label": "Community 19",
+      "size": 34,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/request/Method.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Status.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpPostRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/GZipIntegrationTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/PutStreamIntegrationTest.java"
+      ]
+    },
+    {
+      "id": 22,
+      "label": "Community 22",
+      "size": 33,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/CloseCode.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocket.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/CloseFrame.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketException.java"
+      ]
+    },
+    {
+      "id": 23,
+      "label": "Community 23",
+      "size": 32,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 24,
+      "label": "Community 24",
+      "size": 31,
+      "top_files": [
+        "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPlugin.java",
+        "markdown-plugin/src/main/java/org/nanohttpd/markdown/MarkdownWebServerPluginInfo.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/WebServerPluginInfo.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/DummyPluginInfo.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/DummyPlugin.java"
+      ]
+    },
+    {
+      "id": 25,
+      "label": "Community 25",
+      "size": 29,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/ITempFileManager.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java",
+        "fileupload/src/test/java/org/nanohttpd/junit/fileupload/TestNanoFileUpLoad.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/DefaultTempFileManagerFactory.java"
+      ]
+    },
+    {
+      "id": 26,
+      "label": "Community 26",
+      "size": 27,
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/AppNanolets.java"
+      ]
+    },
+    {
+      "id": 28,
+      "label": "Community 28",
+      "size": 24,
+      "top_files": [
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/WebSocketResponseHandlerTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/NanoHTTPD.java",
+        "core/src/main/java/org/nanohttpd/util/IHandler.java"
+      ]
+    },
+    {
+      "id": 30,
+      "label": "Community 30",
+      "size": 24,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/OpCode.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/CloseFrame.java"
+      ]
+    },
+    {
+      "id": 27,
+      "label": "Community 27",
+      "size": 24,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/content/Cookie.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/content/CookieHandler.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/CookieHandlerTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/CookieIntegrationTest.java"
+      ]
+    },
+    {
+      "id": 29,
+      "label": "Community 29",
+      "size": 24,
+      "top_files": [
+        ".reversa/hooks.yml"
+      ]
+    },
+    {
+      "id": 31,
+      "label": "Community 31",
+      "size": 23,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser-dom.js",
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 33,
+      "label": "Community 33",
+      "size": 22,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/content/ContentType.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/ITempFileManager.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/ITempFile.java"
+      ]
+    },
+    {
+      "id": 34,
+      "label": "Community 34",
+      "size": 22,
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/AppNanolets.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java"
+      ]
+    },
+    {
+      "id": 32,
+      "label": "Community 32",
+      "size": 22,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 35,
+      "label": "Community 35",
+      "size": 21,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/content/CookieHandler.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/CookieHandlerTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/request/Method.java"
+      ]
+    },
+    {
+      "id": 36,
+      "label": "Community 36",
+      "size": 21,
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/AppNanolets.java"
+      ]
+    },
+    {
+      "id": 39,
+      "label": "Community 39",
+      "size": 20,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/CookieIntegrationTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/CookieTest.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/content/Cookie.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/content/CookieHandler.java"
+      ]
+    },
+    {
+      "id": 40,
+      "label": "Community 40",
+      "size": 20,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/request/Method.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/response/Response.java"
+      ]
+    },
+    {
+      "id": 37,
+      "label": "Community 37",
+      "size": 20,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 38,
+      "label": "Community 38",
+      "size": 20,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser-session.js"
+      ]
+    },
+    {
+      "id": 42,
+      "label": "Community 42",
+      "size": 19,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpKeepAliveTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/BadRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/CookieTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpDeleteRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpGetRequestTest.java"
+      ]
+    },
+    {
+      "id": 43,
+      "label": "Community 43",
+      "size": 19,
+      "top_files": [
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/SimpleEchoSocket.java",
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/EchoWebSocketsTest.java"
+      ]
+    },
+    {
+      "id": 41,
+      "label": "Community 41",
+      "size": 19,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 44,
+      "label": "Community 44",
+      "size": 18,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/GetAndPostIntegrationTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java"
+      ]
+    },
+    {
+      "id": 45,
+      "label": "Community 45",
+      "size": 18,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/GZipIntegrationTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/PutStreamIntegrationTest.java"
+      ]
+    },
+    {
+      "id": 47,
+      "label": "Community 47",
+      "size": 17,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/NanoWSD.java",
+        "websocket/src/main/java/org/nanohttpd/samples/websockets/DebugWebSocketServer.java",
+        "websocket/src/main/java/org/nanohttpd/samples/websockets/EchoSocketSample.java",
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/EchoWebSocketsTest.java"
+      ]
+    },
+    {
+      "id": 46,
+      "label": "Community 46",
+      "size": 17,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 50,
+      "label": "Community 50",
+      "size": 16,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/DefaultTempFile.java",
+        "samples/src/main/java/org/nanohttpd/samples/tempfiles/TempFilesServer.java",
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/ITempFile.java"
+      ]
+    },
+    {
+      "id": 51,
+      "label": "Community 51",
+      "size": 16,
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/AppNanolets.java"
+      ]
+    },
+    {
+      "id": 52,
+      "label": "Community 52",
+      "size": 16,
+      "top_files": [
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestHttpServer.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/AbstractTestHttpServer.java"
+      ]
+    },
+    {
+      "id": 48,
+      "label": "Community 48",
+      "size": 16,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 49,
+      "label": "Community 49",
+      "size": 16,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 56,
+      "label": "Community 56",
+      "size": 14,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocket.java"
+      ]
+    },
+    {
+      "id": 53,
+      "label": "Community 53",
+      "size": 14,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 54,
+      "label": "Community 54",
+      "size": 14,
+      "top_files": [
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServer.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServerWithSingleOrigin.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestHttpServer.java"
+      ]
+    },
+    {
+      "id": 55,
+      "label": "Community 55",
+      "size": 14,
+      "top_files": [
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java"
+      ]
+    },
+    {
+      "id": 58,
+      "label": "Community 58",
+      "size": 13,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/HTTPSession.java"
+      ]
+    },
+    {
+      "id": 57,
+      "label": "Community 57",
+      "size": 13,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 63,
+      "label": "Community 63",
+      "size": 12,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/samples/websockets/DebugWebSocketServer.java",
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/WebSocketFrame.java"
+      ]
+    },
+    {
+      "id": 59,
+      "label": "Community 59",
+      "size": 12,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/auxiliary_sources.yaml"
+      ]
+    },
+    {
+      "id": 60,
+      "label": "Community 60",
+      "size": 12,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 61,
+      "label": "Community 61",
+      "size": 12,
+      "top_files": [
+        ".agents/skills/reversa-migrate/references/expected_legacy_artifacts.yaml"
+      ]
+    },
+    {
+      "id": 62,
+      "label": "Community 62",
+      "size": 12,
+      "top_files": [
+        ".travis.yml"
+      ]
+    },
+    {
+      "id": 67,
+      "label": "Community 67",
+      "size": 11,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/tempfiles/DefaultTempFileManager.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/JavaIOTempDirExistTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpKeepAliveTest.java"
+      ]
+    },
+    {
+      "id": 68,
+      "label": "Community 68",
+      "size": 11,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpDeleteRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/BadRequestTest.java",
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpServerTest.java"
+      ]
+    },
+    {
+      "id": 64,
+      "label": "Community 64",
+      "size": 11,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 65,
+      "label": "Community 65",
+      "size": 11,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 66,
+      "label": "Community 66",
+      "size": 11,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/expected_sources.yaml"
+      ]
+    },
+    {
+      "id": 69,
+      "label": "Community 69",
+      "size": 10,
+      "top_files": [
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/EchoWebSocketsTest.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServer.java",
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestHttpServer.java"
+      ]
+    },
+    {
+      "id": 70,
+      "label": "Community 70",
+      "size": 10,
+      "top_files": [
+        "websocket/src/test/java/org/nanohttpd/junit/protocols/websockets/WebSocketResponseHandlerTest.java"
+      ]
+    },
+    {
+      "id": 72,
+      "label": "Community 72",
+      "size": 9,
+      "top_files": [
+        "fileupload/src/test/java/org/nanohttpd/junit/fileupload/TestNanoFileUpLoad.java"
+      ]
+    },
+    {
+      "id": 73,
+      "label": "Community 73",
+      "size": 9,
+      "top_files": [
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServer.java"
+      ]
+    },
+    {
+      "id": 74,
+      "label": "Community 74",
+      "size": 9,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/OpCode.java"
+      ]
+    },
+    {
+      "id": 71,
+      "label": "Community 71",
+      "size": 9,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 77,
+      "label": "Community 77",
+      "size": 8,
+      "top_files": [
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestHttpServer.java",
+        "webserver/src/main/java/org/nanohttpd/webserver/SimpleWebServer.java"
+      ]
+    },
+    {
+      "id": 78,
+      "label": "Community 78",
+      "size": 8,
+      "top_files": [
+        "webserver/src/test/java/org/nanohttpd/junit/webserver/TestCorsHttpServerWithSingleOrigin.java"
+      ]
+    },
+    {
+      "id": 76,
+      "label": "Community 76",
+      "size": 8,
+      "top_files": [
+        ".reversa/hooks/check-legacy-policy.mjs"
+      ]
+    },
+    {
+      "id": 75,
+      "label": "Community 75",
+      "size": 8,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 81,
+      "label": "Community 81",
+      "size": 7,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpChunkedResponseTest.java"
+      ]
+    },
+    {
+      "id": 84,
+      "label": "Community 84",
+      "size": 7,
+      "top_files": [
+        "websocket/src/main/java/org/nanohttpd/protocols/websockets/State.java"
+      ]
+    },
+    {
+      "id": 80,
+      "label": "Community 80",
+      "size": 7,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser-ignores.js"
+      ]
+    },
+    {
+      "id": 79,
+      "label": "Community 79",
+      "size": 7,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/impeccable"
+      ]
+    },
+    {
+      "id": 82,
+      "label": "Community 82",
+      "size": 7,
+      "top_files": [
+        "core/pom.xml",
+        "fileupload/pom.xml",
+        "nanolets/pom.xml",
+        "samples/pom.xml",
+        "webserver/pom.xml"
+      ]
+    },
+    {
+      "id": 83,
+      "label": "Community 83",
+      "size": 7,
+      "top_files": [
+        ".reversa/_config/manifest.yaml"
+      ]
+    },
+    {
+      "id": 152,
+      "label": "Community 152",
+      "size": 6,
+      "top_files": [
+        "core/src/main/java/org/nanohttpd/protocols/http/response/ChunkedOutputStream.java"
+      ]
+    },
+    {
+      "id": 153,
+      "label": "Community 153",
+      "size": 6,
+      "top_files": [
+        "nanolets/src/main/java/org/nanohttpd/router/RouterNanoHTTPD.java",
+        "nanolets/src/test/java/org/nanohttpd/junit/router/TestNanolets.java"
+      ]
+    },
+    {
+      "id": 100,
+      "label": "Community 100",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-decouple/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 101,
+      "label": "Community 101",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-depth-inspection/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 102,
+      "label": "Community 102",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-design-system/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 103,
+      "label": "Community 103",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-designer/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 104,
+      "label": "Community 104",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-detective/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 105,
+      "label": "Community 105",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-docs-analyst/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 106,
+      "label": "Community 106",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-docs-mapper/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 107,
+      "label": "Community 107",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 108,
+      "label": "Community 108",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-docs-storyteller/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 109,
+      "label": "Community 109",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-drafter/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 110,
+      "label": "Community 110",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-especialista-d3/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 111,
+      "label": "Community 111",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-explorer/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 112,
+      "label": "Community 112",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-extract-soul/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 113,
+      "label": "Community 113",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-framer/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 114,
+      "label": "Community 114",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-graph-builder/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 115,
+      "label": "Community 115",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-graph-navigator/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 116,
+      "label": "Community 116",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-highcharts-visualizer/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 117,
+      "label": "Community 117",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-ideator/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 118,
+      "label": "Community 118",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-image-prompt-json/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 119,
+      "label": "Community 119",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-inspector/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 120,
+      "label": "Community 120",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-modularize/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 121,
+      "label": "Community 121",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-n8n/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 122,
+      "label": "Community 122",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-optimize/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 123,
+      "label": "Community 123",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-paradigm-advisor/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 124,
+      "label": "Community 124",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-plan/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 125,
+      "label": "Community 125",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pre-spec/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 126,
+      "label": "Community 126",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pricing-advisor/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 127,
+      "label": "Community 127",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pricing-estimate/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 128,
+      "label": "Community 128",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pricing-product/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 129,
+      "label": "Community 129",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pricing-profile/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 130,
+      "label": "Community 130",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pricing-research/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 131,
+      "label": "Community 131",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-pricing-size/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 132,
+      "label": "Community 132",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-principles/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 133,
+      "label": "Community 133",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-prune/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 134,
+      "label": "Community 134",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-quality/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 135,
+      "label": "Community 135",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-reconstructor/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 136,
+      "label": "Community 136",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-requirements/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 137,
+      "label": "Community 137",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-researcher/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 138,
+      "label": "Community 138",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-restructure/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 139,
+      "label": "Community 139",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-resume/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 140,
+      "label": "Community 140",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-reviewer/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 141,
+      "label": "Community 141",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-scout/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 142,
+      "label": "Community 142",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-screen-translator/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 143,
+      "label": "Community 143",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-selo-generativo/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 144,
+      "label": "Community 144",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-simplify/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 145,
+      "label": "Community 145",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-spec-sdd/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 146,
+      "label": "Community 146",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-standardize/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 147,
+      "label": "Community 147",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-strategist/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 148,
+      "label": "Community 148",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-sync/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 149,
+      "label": "Community 149",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-to-do/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 150,
+      "label": "Community 150",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-visor/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 151,
+      "label": "Community 151",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-writer/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 85,
+      "label": "Community 85",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-add/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 86,
+      "label": "Community 86",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-arbiter/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 87,
+      "label": "Community 87",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-archaeologist/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 88,
+      "label": "Community 88",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-architect/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 89,
+      "label": "Community 89",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-arquitetura-3d/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 90,
+      "label": "Community 90",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-audit/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 91,
+      "label": "Community 91",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-challenger/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 92,
+      "label": "Community 92",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-clarify/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 93,
+      "label": "Community 93",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-code-express/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 94,
+      "label": "Community 94",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-coding/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 95,
+      "label": "Community 95",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-curator/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 96,
+      "label": "Community 96",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-data-master/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 97,
+      "label": "Community 97",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-debugger-debate/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 98,
+      "label": "Community 98",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-debugger-fix/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 99,
+      "label": "Community 99",
+      "size": 6,
+      "top_files": [
+        ".agents/skills/reversa-debugger-graph/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 164,
+      "label": "Community 164",
+      "size": 5,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/HttpParsingTest.java"
+      ]
+    },
+    {
+      "id": 165,
+      "label": "Community 165",
+      "size": 5,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/integration/ShutdownTest.java"
+      ]
+    },
+    {
+      "id": 166,
+      "label": "Community 166",
+      "size": 5,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/LoadKeyStoreTest.java"
+      ]
+    },
+    {
+      "id": 167,
+      "label": "Community 167",
+      "size": 5,
+      "top_files": [
+        "core/src/test/java/org/nanohttpd/junit/protocols/http/MimeTest.java"
+      ]
+    },
+    {
+      "id": 155,
+      "label": "Community 155",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/impeccable/scripts/live-browser.js"
+      ]
+    },
+    {
+      "id": 154,
+      "label": "Community 154",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/impeccable/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 156,
+      "label": "Community 156",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 157,
+      "label": "Community 157",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 158,
+      "label": "Community 158",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 159,
+      "label": "Community 159",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 160,
+      "label": "Community 160",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 161,
+      "label": "Community 161",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 162,
+      "label": "Community 162",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs-publisher/references/vendor-pins.yaml"
+      ]
+    },
+    {
+      "id": 163,
+      "label": "Community 163",
+      "size": 5,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 168,
+      "label": "Community 168",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-agents-help/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 169,
+      "label": "Community 169",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 170,
+      "label": "Community 170",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-autonomous/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 171,
+      "label": "Community 171",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-brainstorm/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 172,
+      "label": "Community 172",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-debugger/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 173,
+      "label": "Community 173",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-docs/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 174,
+      "label": "Community 174",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 175,
+      "label": "Community 175",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-forward/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 176,
+      "label": "Community 176",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-forward-autonomous/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 177,
+      "label": "Community 177",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-migrate/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 178,
+      "label": "Community 178",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-new/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 179,
+      "label": "Community 179",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-pricing/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 180,
+      "label": "Community 180",
+      "size": 4,
+      "top_files": [
+        ".agents/skills/reversa-refactor/agents/openai.yaml"
+      ]
+    },
+    {
+      "id": 181,
+      "label": "Community 181",
+      "size": 4,
+      "top_files": [
+        ".reversa/scripts/sh/verify-prerequisites.sh"
+      ]
+    },
+    {
+      "id": 182,
+      "label": "Community 182",
+      "size": 3,
+      "top_files": [
+        ".agents/skills/reversa-docs/references/config-schema.json"
+      ]
+    },
+    {
+      "id": 183,
+      "label": "Community 183",
+      "size": 3,
+      "top_files": [
+        ".reversa/scripts/sh/bind-to-extraction.sh"
+      ]
+    },
+    {
+      "id": 184,
+      "label": "Community 184",
+      "size": 2,
+      "top_files": [
+        ".reversa/scripts/ps/verify-prerequisites.ps1"
+      ]
+    },
+    {
+      "id": 185,
+      "label": "Community 185",
+      "size": 2,
+      "top_files": [
+        ".reversa/scripts/sh/prepare-roadmap.sh"
+      ]
+    },
+    {
+      "id": 186,
+      "label": "Community 186",
+      "size": 1,
+      "top_files": [
+        "build.gradle"
+      ]
+    },
+    {
+      "id": 187,
+      "label": "Community 187",
+      "size": 1,
+      "top_files": [
+        "core/build.gradle"
+      ]
+    },
+    {
+      "id": 188,
+      "label": "Community 188",
+      "size": 1,
+      "top_files": [
+        "fileupload/build.gradle"
+      ]
+    },
+    {
+      "id": 189,
+      "label": "Community 189",
+      "size": 1,
+      "top_files": [
+        "markdown-plugin/build.gradle"
+      ]
+    },
+    {
+      "id": 190,
+      "label": "Community 190",
+      "size": 1,
+      "top_files": [
+        "nanolets/build.gradle"
+      ]
+    },
+    {
+      "id": 191,
+      "label": "Community 191",
+      "size": 1,
+      "top_files": [
+        "relocation/nanohttpd/pom.xml"
+      ]
+    },
+    {
+      "id": 192,
+      "label": "Community 192",
+      "size": 1,
+      "top_files": [
+        "relocation/pom.xml"
+      ]
+    },
+    {
+      "id": 193,
+      "label": "Community 193",
+      "size": 1,
+      "top_files": [
+        "relocation/nanohttpd-samples/pom.xml"
+      ]
+    },
+    {
+      "id": 194,
+      "label": "Community 194",
+      "size": 1,
+      "top_files": [
+        "relocation/nanohttpd-webserver/pom.xml"
+      ]
+    },
+    {
+      "id": 195,
+      "label": "Community 195",
+      "size": 1,
+      "top_files": [
+        "relocation/nanohttpd-webserver-markdown-plugin/pom.xml"
+      ]
+    },
+    {
+      "id": 196,
+      "label": "Community 196",
+      "size": 1,
+      "top_files": [
+        "relocation/nanohttpd-websocket/pom.xml"
+      ]
+    },
+    {
+      "id": 197,
+      "label": "Community 197",
+      "size": 1,
+      "top_files": [
+        "pom.xml"
+      ]
+    },
+    {
+      "id": 198,
+      "label": "Community 198",
+      "size": 1,
+      "top_files": [
+        ".reversa/scripts/ps/bind-to-extraction.ps1"
+      ]
+    },
+    {
+      "id": 199,
+      "label": "Community 199",
+      "size": 1,
+      "top_files": [
+        ".reversa/scripts/ps/prepare-roadmap.ps1"
+      ]
+    },
+    {
+      "id": 200,
+      "label": "Community 200",
+      "size": 1,
+      "top_files": [
+        "samples/build.gradle"
+      ]
+    },
+    {
+      "id": 201,
+      "label": "Community 201",
+      "size": 1,
+      "top_files": [
+        "settings.gradle"
+      ]
+    },
+    {
+      "id": 202,
+      "label": "Community 202",
+      "size": 1,
+      "top_files": [
+        "webserver/build.gradle"
+      ]
+    },
+    {
+      "id": 203,
+      "label": "Community 203",
+      "size": 1,
+      "top_files": [
+        "websocket/build.gradle"
+      ]
+    }
+  ],
+  "report_path": ".reversa/graphify-out/GRAPH_REPORT.md",
+  "wiki_path": null,
+  "benchmark": {
+    "reduction": "148.8x",
+    "avg_query_tokens": 1229
+  }
+}

@@ -36,20 +36,21 @@ package org.nanohttpd.junit.protocols.websockets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
+import org.eclipse.jetty.websocket.api.Callback;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.StatusCode;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
-import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketOpen;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 
 /**
  * Basic Echo Client Socket
  */
-@WebSocket(maxTextMessageSize = 64 * 1024)
+@WebSocket
 public class SimpleEchoSocket {
 
     private final List<String> receivedMessages = new ArrayList<String>();
@@ -80,17 +81,26 @@ public class SimpleEchoSocket {
         this.closeLatch.countDown();
     }
 
-    @OnWebSocketConnect
+    @OnWebSocketOpen
     public void onConnect(Session session) {
         System.out.printf("Got connect: %s%n", session);
         try {
-            Future<Void> fut;
-
+            session.setMaxTextMessageSize(64 * 1024);
             for (String message : this.toSendMessages) {
-                fut = session.getRemote().sendStringByFuture(message);
-                fut.get(5, TimeUnit.SECONDS);
+                CountDownLatch sent = new CountDownLatch(1);
+                AtomicReference<Throwable> failure = new AtomicReference<Throwable>();
+                session.sendText(message, Callback.from(sent::countDown, cause -> {
+                    failure.set(cause);
+                    sent.countDown();
+                }));
+                if (!sent.await(5, TimeUnit.SECONDS)) {
+                    throw new IllegalStateException("Timed out sending WebSocket test message.");
+                }
+                if (failure.get() != null) {
+                    throw new IllegalStateException("Could not send WebSocket test message.", failure.get());
+                }
             }
-            session.close(StatusCode.NORMAL, "I'm done");
+            session.close(StatusCode.NORMAL, "I'm done", Callback.NOOP);
         } catch (Throwable t) {
             t.printStackTrace();
         }

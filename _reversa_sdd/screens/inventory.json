@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-24T08:32:06Z",
+  "producedBy": "screen-translator",
+  "sourcePlatform": "java-http-library",
+  "detectionConfidence": "confirmed",
+  "screens": [],
+  "skipped": {
+    "reason": "NanoHTTPD is an embeddable HTTP server library with no owned end-user UI screens. HTML responses in samples, routing examples, static webserver fixtures, and tests are example/test content rather than product screens.",
+    "emittedAt": "2026-10-24T08:32:06Z"
+  }
+}
